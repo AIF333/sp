@@ -90,3 +90,12 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+
+# 翻页的层数
+DEPTH_LIMIT=4
+
+#自定义剔重规则
+##### 这个是默认的，通过set集合写入到文件，公司一般是自己配置写入到redis中
+# DUPEFILTER_CLASS = 'scrapy.dupefilter.RFPDupeFilter'
+DUPEFILTER_CLASS = 'sp01.filter.RepeatUrl'
